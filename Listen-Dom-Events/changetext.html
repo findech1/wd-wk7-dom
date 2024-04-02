@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listeners</title>
+</head>
+<body>
+    <p id="p_one"></p>
+    <p id="myText">This is a sample paragraph</p>
+    <p id="p_two">Change Color</p>
+    <button id="btn_one">Change Text</button>
+    
+    <script>
+        document.getElementById('p_one').innerHTML = "Good morning welcome to my class!";
+        var btn = document.getElementById('btn_one');
+        function ChangeText(event){
+            console.log();
+            var txt = document.getElementById('p_one');
+            txt.innerHTML = 'This is a lesson in HTML DOM , Events and Event Listeners Done!';
+
+        }
+        btn.addEventListener('click', ChangeText);
+        
+        document.addEventListener('keydown', (event) => {
+            console.log(`A key is pressed: ${event.key}`);
+            console.log(event.key)// shows key pressed
+        });
+
+        document.addEventListener('keyup', (event) => {
+            console.log(`A key is released: ${event.key}`);// console.log('key released:+event.key')
+        });
+        document.addEventListener('mousedown', (event) => {
+            console.log('The mouse is pressed');
+        });
+        document.addEventListener('mouseup', (event) => {
+            console.log('The mouse is released');
+        });
+        document.addEventListener('mouseover', (event) => {
+            console.log('The mouse is moved');
+        });
+        function clickButton() {
+            alert('The button is clicked');
+        }
+
+        //Change the color of text
+        var txt2 = document.getElementById('p_two'); // Define txt2 here
+        function ChangeColor(event){
+            console.log(event);
+            txt2.style.color ='red';
+        }
+        txt2.addEventListener('mouseover',ChangeColor, true);
+    </script>
+    
+</body>
+</html>

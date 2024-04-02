@@ -9,14 +9,14 @@
     <p id="html_dom">Good morning welcome to my class!</p>
     <p id="myText">This is a sample paragraph</p>
     <button id="changeText">Change Text</button>
-    
+
     <script>
         document.getElementById('html_dom').innerHTML = "Good morning welcome to my class!";
         const button = document.querySelector('#changeText');
         function newText(event){
             console.log(event);
             const p = document.querySelector('#myText');
-            p.innerText = 'The text has been changed!';
+            p.innerText = 'The text has been replaced !';
 
         }
         button.addEventListener('click', newText);
