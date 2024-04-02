@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="html_dom"></p>
+    <p id="myText">This is a sample paragraph</p>
+    <button id="changeText">Change Text</button>
+    
+    <script>
+        document.getElementById('html_dom').innerHTML = "Good morning welcome to my class!";
+        const button = document.querySelector('#changeText');
+        function newText(event){
+            console.log(event);
+            const p = document.querySelector('#myText');
+            p.innerText = 'The text has been changed!';
+
+        }
+        button.addEventListener('click', newText);
+        
+        document.addEventListener('keydown', (event) => {
+            console.log(`A key is pressed: ${event.key}`);
+            console.log(event.key)// shows key pressed
+        });
+
+        document.addEventListener('keyup', (event) => {
+            console.log(`A key is released: ${event.key}`);
+        });
+    </script>
+</body>
+</html>
